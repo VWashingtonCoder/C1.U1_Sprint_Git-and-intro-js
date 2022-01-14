@@ -210,12 +210,12 @@ Practice accessing data above by console.log-ing following items:
 //(1) Name of the first artist (0th index) in the array
 
 // Answer_Correct
-console.log(artists[0]);
+// console.log(artists[0]);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
 // Answer_Correct
-console.log(artists[2].bio);
+// console.log(artists[2].bio);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -224,7 +224,7 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
 
 // Answer_Correct
  artists[8].name='Vincent Van Gogh';
- console.log(artists[8].name);
+//  console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -249,12 +249,20 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 
-//  aYears =artists[18].years;
-//  splitYears=aYears.split({});
-//  console.log(splitYears.includes('1900 - 2000'));
+// const aYears =artists[5].years;
+// const splitYears=aYears.split(' -');
+// console.log(splitYears[0].includes(19));
 
 function get20s(array) {
-
+  const artist20 = [];
+  for(let i=0;i<array.length;i++){
+    const aYears = artists[i].years;
+    const splitYears=aYears.split(' -');
+    if (splitYears[0].includes(19)){
+      artist20.push(artists[i].name)
+    }
+  }
+  return artist20
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
